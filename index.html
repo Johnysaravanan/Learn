@@ -10,36 +10,68 @@
       padding: 0;
       box-sizing: border-box;
       font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
     }
     body {
       background: #f8f9fc;
       color: #333;
       line-height: 1.6;
     }
-    header {
-      background: #4a90e2;
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(74, 144, 226, 0.95);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      z-index: 1000;
+    }
+    nav h2 {
       color: #fff;
-      padding: 40px 20px;
+      font-size: 1.5rem;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: opacity 0.3s ease;
+    }
+    nav ul li a:hover {
+      opacity: 0.8;
+    }
+    header {
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                  url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?fit=crop&w=1350&q=80') center/cover no-repeat;
+      color: #fff;
       text-align: center;
+      padding: 140px 20px 100px;
     }
     header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+      font-size: 2.8rem;
+      margin-bottom: 15px;
     }
     header p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
     .container {
       max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 20px;
+      margin: 0 auto;
+      padding: 60px 20px;
     }
-    .features {
+    .features, .contact-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
-    .feature-card {
+    .feature-card, .contact-card {
       background: #fff;
       padding: 20px;
       border-radius: 12px;
@@ -47,21 +79,21 @@
       text-align: center;
       transition: transform 0.2s ease-in-out;
     }
-    .feature-card:hover {
+    .feature-card:hover, .contact-card:hover {
       transform: translateY(-5px);
     }
-    .feature-card h3 {
+    .feature-card h3, .contact-card h3 {
       color: #4a90e2;
       margin-bottom: 10px;
     }
     .cta {
       text-align: center;
-      margin: 40px 0;
+      margin: 60px 0;
     }
     .cta a {
       background: #4a90e2;
       color: #fff;
-      padding: 12px 30px;
+      padding: 14px 35px;
       text-decoration: none;
       border-radius: 8px;
       font-size: 1.2rem;
@@ -76,40 +108,82 @@
       padding: 20px;
       font-size: 0.9rem;
       color: #555;
+      margin-top: 40px;
+    }
+    section {
+      padding-top: 60px;
     }
   </style>
 </head>
 <body>
 
-  <header>
+  <!-- Navigation -->
+  <nav>
+    <h2>Learn PSC</h2>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="home">
     <h1>Learn PSC Coaching</h1>
     <p>Your Pathway to Success in PSC Exams – Anywhere, Anytime</p>
   </header>
 
   <div class="container">
-    <section class="features">
-      <div class="feature-card">
-        <h3>Online Live Sessions</h3>
-        <p>Join our expert-led classes from the comfort of your home with interactive live sessions.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Mock Tests & Analysis</h3>
-        <p>Practice with real-time mock tests and get detailed performance analysis.</p>
-      </div>
-      <div class="feature-card">
-        <h3>24/7 Doubt Support</h3>
-        <p>Our mentors are available round the clock to clear your doubts instantly.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Flexible Timings</h3>
-        <p>Study at your own pace with multiple timing options designed for all schedules.</p>
+    <!-- Features Section -->
+    <section id="features">
+      <h2 style="text-align:center; margin-bottom: 30px;">Our Key Features</h2>
+      <div class="features">
+        <div class="feature-card">
+          <h3>Online Live Sessions</h3>
+          <p>Join expert-led classes from home with interactive live sessions.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Mock Tests & Analysis</h3>
+          <p>Practice with real-time mock tests and get performance analysis.</p>
+        </div>
+        <div class="feature-card">
+          <h3>24/7 Doubt Support</h3>
+          <p>Mentors are available round the clock to clear your doubts instantly.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Flexible Timings</h3>
+          <p>Study at your own pace with multiple timing options.</p>
+        </div>
       </div>
     </section>
 
+    <!-- Call to Action -->
     <section class="cta">
       <h2>Start Your Journey Today!</h2>
       <p>Enroll now and take your first step towards cracking PSC exams with confidence.</p>
-      <a href="#">Join Now</a>
+      <a href="#contact">Join Now</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2 style="text-align:center; margin-bottom: 30px;">Contact Us</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Call Us</h3>
+          <p>+91 98765 43210</p>
+          <p>Mon - Sat, 9 AM - 6 PM</p>
+        </div>
+        <div class="contact-card">
+          <h3>Email</h3>
+          <p>info@learnpsc.com</p>
+          <p>Get a reply within 24 hours</p>
+        </div>
+        <div class="contact-card">
+          <h3>Location</h3>
+          <p>Learn PSC Coaching, Kochi, Kerala</p>
+          <p>Online & Offline Support</p>
+        </div>
+      </div>
     </section>
   </div>
 
